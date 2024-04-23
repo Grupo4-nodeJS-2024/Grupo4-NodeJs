@@ -25,7 +25,13 @@ header {
     padding: 20px 0;
     text-align: center;
 }
+.section {
+  height: 500px;
+  background-color: #f2f2f2;
+  margin: 20px 0;
+}
 
+/*------ Zona Productos-----*/
 .products {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
