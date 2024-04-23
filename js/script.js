@@ -59,4 +59,12 @@ function toggleMenu() {
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify(jsonData));
   });
-  
+
+    //Función para linkear dentro de la página
+  function scrollToSection(event, sectionId) {
+    event.preventDefault();
+    var section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
