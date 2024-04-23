@@ -1,0 +1,62 @@
+const products = [
+    { name: 'Product 1', precio: 19.99, image: 'https://cdn.pixabay.com/photo/2014/09/23/21/23/iphone-6-458159_1280.jpg' },
+    { name: 'Product 2', precio: 29.99, image: 'https://cdn.pixabay.com/photo/2014/09/23/21/23/iphone-6-458159_1280.jpg' },
+    { name: 'Product 3', precio: 39.99, image: 'https://cdn.pixabay.com/photo/2014/09/23/21/23/iphone-6-458159_1280.jpg' }
+];
+
+// Función para mostrar productos en la página.
+function displayProducts() {
+    const productsContainer = document.querySelector('.products');
+
+    products.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.classList.add('product');
+
+        productCard.innerHTML = `
+            <img src="https://cdn.pixabay.com/photo/2014/09/23/21/23/iphone-6-458159_1280.jpg" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>$${product.precio}</p>
+            <button>Add to Cart</button>
+        `;
+
+        productsContainer.appendChild(productCard);
+    });
+}
+
+// Llame a la función displayProducts cuando se carga la página
+window.addEventListener('load', displayProducts);
+
+// El menú
+function toggleMenu() {
+    var x = document.getElementById("navbarMobile");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  // FORMULARIO
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var formData = new FormData(this);
+    var jsonData = {};
+    formData.forEach(function(value, key){
+      jsonData[key] = value;
+    });
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          document.getElementById('response').innerText = 'MENSAJE ENVIADO EXITOSAMENTE!';
+          document.getElementById('contactForm').reset();
+        } else {
+          document.getElementById('response').innerText = 'HA OCURRIDO UN ERROR. POR FAVOR, VUELVA A INTENTAR.';
+        }
+      }
+    };
+    xhr.open('POST', 'your-server-endpoint-url', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify(jsonData));
+  });
+  
