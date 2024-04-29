@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+        <!--=============== REMIXICON ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- FONT AWESOME 6.1.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- BOOTSTRAP CSS 5.1.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Tienda</title>
+    <link rel="stylesheet" href="styles.css">
+    </head>
+    <body class="colorete">
+        <header class="header_ajuste1">
+            <div class="izquierda-header"><img src="./IMG/logo.jpeg" alt="logo-gimnasio" style="max-width: 80px;"></div>
+            <div class="derecha-header">
+
+                <a  id="ini" href="index.html">Home</a>
+                <a  href="help.html" id="help">Help</a>          
+                <!--<a class="btn" href="nutricion.html" id="nutricion">Nutricion</a>-->
+                <a class="btn" href="horarios.html" id="horarios">Horarios</a>
+                <a class="btn" href="actividades.html" id="actividades">Actividades</a>
+                <a class="btn" href="tienda.html" id="compras2">Tienda</a>
+                <a class="btn" href="contacto.html" id="contacto">Contacto</a>
+         
+            </div>
+        </header>
+    
+        <!--<section class="border-bottom title-section">
+            <div class="container">
+                <div class="row row-cols-md-2 row-cols-1">
+                    <div class="col">
+                        <h2 class="pt-4 pb-3 m-0">
+                            TIENDA
+                        </h2>
+                    </div>
+                    <div class="col d-flex justify-content-end pt-4">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item "><a href="index.html">Inicio</a></li>
+                                <li class="breadcrumb-item active text-dark" aria-current="page">Tienda</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+
+        
+
+       <script>
+            
+            document.addEventListener('DOMContentLoaded', () => {
+              // Variables
+              const baseDeDatos = [
+                  {
+                      id: 1,
+                      nombre: 'Guantes',
+                      precio: 1700,
+                      imagen: './views/static/img/guantes.jpg'
+                  },
+                  {
+                      id: 2,
+                      nombre: 'Remera',
+                      precio: 3000,
+                      imagen: './views/static/img/remera.jpg'
+                  },
+                  {
+                      id: 3,
+                      nombre: 'Campera',
+                      precio: 12000,
+                      imagen: './views/static/img/campera.jpg'
+                  },
+                  {
+                      id: 4,
+                      nombre: 'Pantalon',
+                      precio: 4750,
+                      imagen: './views/static/img/pantalon.jpg'
+                  },
+                  {
+                      id: 5,
+                      nombre: 'Creatina',
+                      precio: 2190,
+                      imagen: './views/static/img/creatina.jpg'
+                  },
+                  {
+                      id: 6,
+                      nombre: 'Proteina',
+                      precio: 2360,
+                      imagen: './views/static/img/proteina.jpg'
+                  }
+    
+    
+              ];
+    
+              let carrito = [];
+                const divisa = '$';
+                const DOMitems = document.querySelector('#items');
+                const DOMcarrito = document.querySelector('#carrito');
+                const DOMtotal = document.querySelector('#total');
+                const DOMbotonVaciar = document.querySelector('#boton-vaciar');
+                const miLocalStorage = window.localStorage;
+    
+                // Funciones
+    
+                /**
+                * Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
+                */
+                function renderizarProductos() {
+                    baseDeDatos.forEach((info) => {
+                        // Estructura
+                        const miNodo = document.createElement('div');
+                        miNodo.classList.add('card', 'col-sm-4');
+                        // Body
+                        const miNodoCardBody = document.createElement('div');
+                        miNodoCardBody.classList.add('card-body');
+                        // Titulo
+                        const miNodoTitle = document.createElement('h5');
+                        miNodoTitle.classList.add('card-title');
+                        miNodoTitle.textContent = info.nombre;
+                        // Imagen
+                        const miNodoImagen = document.createElement('img');
+                        miNodoImagen.classList.add('img-fluid');
+                        miNodoImagen.setAttribute('src', info.imagen);
+                        // Precio
+                        const miNodoPrecio = document.createElement('p');
+                        miNodoPrecio.classList.add('card-text');
+                        miNodoPrecio.textContent = `${info.precio}${divisa}`;
+                        // Boton 
+                        const miNodoBoton = document.createElement('button');
+                        miNodoBoton.classList.add('btn', 'btn-primary');
+                        miNodoBoton.textContent = '+';
+                        miNodoBoton.setAttribute('marcador', info.id);
+                        miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
+                        // Insertamos
+                        miNodoCardBody.appendChild(miNodoImagen);
+                        miNodoCardBody.appendChild(miNodoTitle);
+                        miNodoCardBody.appendChild(miNodoPrecio);
+                        miNodoCardBody.appendChild(miNodoBoton);
+                        miNodo.appendChild(miNodoCardBody);
+                        DOMitems.appendChild(miNodo);
+                    });
+                }
+    
+                /**
+                * Evento para añadir un producto al carrito de la compra
+                */
+                function anyadirProductoAlCarrito(evento) {
+                    // Anyadimos el Nodo a nuestro carrito
+                    carrito.push(evento.target.getAttribute('marcador'))
+                    // Actualizamos el carrito 
+                    renderizarCarrito();
+                    // Actualizamos el LocalStorage
+                    guardarCarritoEnLocalStorage();
+                }
+    
+                /**
+                * Dibuja todos los productos guardados en el carrito
+                */
+                function renderizarCarrito() {
+                    // Vaciamos todo el html
+                    DOMcarrito.textContent = '';
+                    // Quitamos los duplicados
+                    const carritoSinDuplicados = [...new Set(carrito)];
+                    // Generamos los Nodos a partir de carrito
+                    carritoSinDuplicados.forEach((item) => {
+                        // Obtenemos el item que necesitamos de la variable base de datos
+                        const miItem = baseDeDatos.filter((itemBaseDatos) => {
+                            // ¿Coincide las id? Solo puede existir un caso
+                            return itemBaseDatos.id === parseInt(item);
+                        });
+                        // Cuenta el número de veces que se repite el producto
+                        const numeroUnidadesItem = carrito.reduce((total, itemId) => {
+                            // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
+                            return itemId === item ? total += 1 : total;
+                        }, 0);
+                        // Creamos el nodo del item del carrito
+                        const miNodo = document.createElement('li');
+                        miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
+                        miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
+                        // Boton de borrar
+                        const miBoton = document.createElement('button');
+                        miBoton.classList.add('btn', 'btn-danger', 'mx-5');
+                        miBoton.textContent = 'X';
+                        miBoton.style.marginLeft = '1rem';
+                        miBoton.dataset.item = item;
+                        miBoton.addEventListener('click', borrarItemCarrito);
+                        // Mezclamos nodos
+                        miNodo.appendChild(miBoton);
+                        DOMcarrito.appendChild(miNodo);
+                    });
+                    // Renderizamos el precio total en el HTML
+                    DOMtotal.textContent = calcularTotal();
+                }
+    
+                /**
+                * Evento para borrar un elemento del carrito
+                */
+                function borrarItemCarrito(evento) {
+                    // Obtenemos el producto ID que hay en el boton pulsado
+                    const id = evento.target.dataset.item;
+                    // Borramos todos los productos
+                    carrito = carrito.filter((carritoId) => {
+                        return carritoId !== id;
+                    });
+                    // volvemos a renderizar
+                    renderizarCarrito();
+                    // Actualizamos el LocalStorage
+                    guardarCarritoEnLocalStorage();
+    
+                }
+    
+                /**
+                 * Calcula el precio total teniendo en cuenta los productos repetidos
+                 */
+                function calcularTotal() {
+                    // Recorremos el array del carrito 
+                    return carrito.reduce((total, item) => {
+                        // De cada elemento obtenemos su precio
+                        const miItem = baseDeDatos.filter((itemBaseDatos) => {
+                            return itemBaseDatos.id === parseInt(item);
+                        });
+                        // Los sumamos al total
+                        return total + miItem[0].precio;
+                    }, 0).toFixed(2);
+                }
+    
+                /**
+                * Varia el carrito y vuelve a dibujarlo
+                */
+                function vaciarCarrito() {
+                    // Limpiamos los productos guardados
+                    carrito = [];
+                    // Renderizamos los cambios
+                    renderizarCarrito();
+                    // Borra LocalStorage
+                    localStorage.clear();
+    
+                }
+    
+                function guardarCarritoEnLocalStorage () {
+                    miLocalStorage.setItem('carrito', JSON.stringify(carrito));
+                }
+    
+                function cargarCarritoDeLocalStorage () {
+                    // ¿Existe un carrito previo guardado en LocalStorage?
+                    if (miLocalStorage.getItem('carrito') !== null) {
+                        // Carga la información
+                        carrito = JSON.parse(miLocalStorage.getItem('carrito'));
+                    }
+                }
+    
+                // Eventos
+                DOMbotonVaciar.addEventListener('click', vaciarCarrito);
+    
+                // Inicio
+                cargarCarritoDeLocalStorage();
+                renderizarProductos();
+                renderizarCarrito();
+            });
+            alert(miLocalStorage);
+        </script>
+    </head>
+    <body>
+        <div class="ajuste container">
+            <br> <br> <br> <br> <br> 
+            <h2>
+                TIENDA
+            </h2>
+            <div class="row">
+                
+                <!-- Elementos generados a partir del JSON -->
+                <main id="items" class="col-sm-8 row"></main>
+                <!-- Carrito -->
+                <aside id="car" class=" col-sm-4">
+                <form  name="form" method="post" >
+                    <h2>Carrito</h2>
+                    <!-- Elementos del carrito -->
+                    <ul id="carrito" class="list-group"></ul>
+                    <hr>
+                    <!-- Precio total -->
+                    <p class="text-right">Total: <span id="total"></span>&dollar;</p>
+                                
+                    <button  type="text" id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                    <input type="submit"  id="boton" class="btn btn-success" name="boton" value="Confirmar" onclick="pasatotal()">
+                    </form>
+    <SCRIPT>
+    
+    function pasatotal(){
+        
+        
+    window.open('pagos','width=240,height=200');
+    }
+    </SCRIPT>
+               
+                    
+                </aside>
+            </div>
+        </div>
+    <style>   
+    
+    img.img-fluid{
+      width: 100px;
+      height: 100px;
+    }
+    
+    </style>   
+    <script>
+    
+    </script>
+</body>
+<body>
+        <footer class="pie">
+            <div class="copyright">
+                <p>© 2023 Gimnasios J-2MF. All rights reserved.</p>
+            </div>
+            <div class="socials">
+                <a href="#"><img src="https://icongr.am/entypo/instagram-with-circle.svg?size=38&color=ffffff" alt="instagram"></a>
+                <a href="#"><img src="https://icongr.am/entypo/facebook-with-circle.svg?size=38&color=ffffff" alt="facebook"></a>
+                <a href="#"><img src="https://icongr.am/entypo/youtube-with-circle.svg?size=38&color=ffffff" alt="youtube"></a>
+                <a href="#"><img src="https://icongr.am/entypo/twitter-with-circle.svg?size=38&color=ffffff" alt="twitter"></a>
+            </div>
+        </footer>
+         <!-- BOOTSTRAP JS 5.1.3 -->
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        
+    </body>
+    </html>
+    <style>
+        .header_ajuste1 {
+            position: fixed!important;
+            width: 100%!important;
+            height: auto!important;
+            top: 0%!important;
+            left: 0%!important;
+            padding: 1%!important;
+          
+            z-index: 99999!important;
+          }
+    </style>
