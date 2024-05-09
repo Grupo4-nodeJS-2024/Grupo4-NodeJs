@@ -35,7 +35,7 @@ function toggleMenu() {
       x.style.display = "block";
     }
   }
-
+/*
   // FORMULARIO
   document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -59,7 +59,7 @@ function toggleMenu() {
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify(jsonData));
   });
-
+*/
     //Función para linkear dentro de la página
   function scrollToSection(event, sectionId) {
     event.preventDefault();
