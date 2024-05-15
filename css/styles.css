@@ -69,6 +69,11 @@ header {
 
 .form1 {
     display: inline-block;
+    text-align: end;
+    text-align: right;
+}
+.container .form1{
+  text-align: right;
 }
 
 input[type="text"] {
@@ -136,10 +141,11 @@ button:hover {
 }
 .siteicon{
   color: #333;
-  display: flex;
+  display: flex end;
   -webkit-box-pack:end;
   justify-content: space-between;
   padding: 10px 20px;
+
 }
 .siteicon a{
   display: inline-block;
