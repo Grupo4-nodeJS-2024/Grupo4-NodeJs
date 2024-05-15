@@ -1,7 +1,7 @@
 const products = [
-    { name: 'Product 1', precio: 19.99, image: 'https://cdn.pixabay.com/photo/2014/09/23/21/23/iphone-6-458159_1280.jpg' },
-    { name: 'Product 2', precio: 29.99, image: 'https://cdn.pixabay.com/photo/2014/09/23/21/23/iphone-6-458159_1280.jpg' },
-    { name: 'Product 3', precio: 39.99, image: 'https://cdn.pixabay.com/photo/2014/09/23/21/23/iphone-6-458159_1280.jpg' }
+    { name: 'Product 1', precio: 19.99, image: '#' },
+    { name: 'Product 2', precio: 29.99, image: '#' },
+    { name: 'Product 3', precio: 39.99, image: '#' }
 ];
 
 // Función para mostrar productos en la página.
@@ -13,7 +13,7 @@ function displayProducts() {
         productCard.classList.add('product');
 
         productCard.innerHTML = `
-            <img src="https://cdn.pixabay.com/photo/2014/09/23/21/23/iphone-6-458159_1280.jpg" alt="${product.name}">
+            <img src="imgs/${product.name}.jpg" alt="${product.name}">
             <h3>${product.name}</h3>
             <p>$${product.precio}</p>
             <button>Add to Cart</button>
