@@ -31,7 +31,7 @@
                 <a href="#">Hombres</a>
                 <a href="#">Juvenil</a>
                 <a href="#">Sustentable</a>
-                <a  href="#section1" onclick="scrollToSection(event, 'section1')">Contacto</a>
+                <a  href="index.html#section1" onclick="scrollToSection(event, 'section1')">Contacto</a>
                 <a href="contacto.html">Preguntas Frecuentes</a>
                 <!--<a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
                 <i class="fa fa-bars"></i>
@@ -84,32 +84,8 @@
 
     <!--PRODUCTOS--->
     <main class="container">
-      <h3>Lo más popular...</h3>
-        <section class="products">
-            <!-- Con JavaScript -->
-        </section>
-
-        <!--FORMULARIO-->
-        <div id="section1" class="section">
-          <form id="contactForm" class="form2" method="POST">
-            <h3>Contáctanos</h3>
-            <div class="input-group">
-              <label for="name">Nombre:</label>
-              <input type="text" id="name" name="name" required>
-            </div>
-            <div class="input-group">
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            <div class="input-group">
-              <label for="message">Mensaje:</label>
-              <textarea id="message" name="message" required></textarea>
-            </div>
-            <button type="submit">Enviar</button>
-          </form>
-          <div id="response"></div>
-        </div><a href="#"></a>
-      </div>
+        <?php include('obtener_productos.php'); ?> 
+        
         <!---Pie de Página--->
         <footer>
             <div class="redes-sociales">
