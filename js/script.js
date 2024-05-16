@@ -1,7 +1,7 @@
 const products = [
-    { name: 'Product 1', precio: 19.99, image: '#' },
-    { name: 'Product 2', precio: 29.99, image: '#' },
-    { name: 'Product 3', precio: 39.99, image: '#' }
+    { name: 'Product 1', description:'Campera Cuero Masculina', precio: 19.99, image: '#' },
+    { name: 'Product 2', description:'Saco y Suéter cuello alto', precio: 29.99, image: '#' },
+    { name: 'Product 3', description:'Buzos para ell@s', precio: 39.99, image: '#' }
 ];
 
 // Función para mostrar productos en la página.
@@ -14,7 +14,7 @@ function displayProducts() {
 
         productCard.innerHTML = `
             <img src="imgs/${product.name}.jpg" alt="${product.name}">
-            <h3>${product.name}</h3>
+            <p>${product.description}</p>
             <p>$${product.precio}</p>
             <button>Add to Cart</button>
         `;
@@ -35,7 +35,7 @@ function toggleMenu() {
       x.style.display = "block";
     }
   }
-/*
+
   // FORMULARIO
   document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -59,8 +59,8 @@ function toggleMenu() {
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify(jsonData));
   });
-*/
-    //Función para linkear dentro de la página
+  
+  //Función para linkear dentro de la página
   function scrollToSection(event, sectionId) {
     event.preventDefault();
     var section = document.getElementById(sectionId);
@@ -68,3 +68,4 @@ function toggleMenu() {
       section.scrollIntoView({ behavior: 'smooth' });
     }
   }
+  
