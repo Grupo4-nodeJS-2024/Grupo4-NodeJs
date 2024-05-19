@@ -27,7 +27,7 @@ header {
   color: black;
 }
 
-.izquierda-header {
+/*.izquierda-header {
   width: 50%;
   margin-left: 5%;
 }
@@ -36,7 +36,7 @@ header {
   width: 50%;
   display: flex;
   justify-content: space-around;
-}
+}*/
 
 .derecha-header a {
   background-color: grey;
