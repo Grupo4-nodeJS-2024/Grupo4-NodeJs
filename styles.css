@@ -15,9 +15,10 @@ header {
   margin: 0 auto;
   background-color: black;
   height: 5em;*/
+  padding: 20px 0;
+  text-align: center;
   align-items: center;
   position: fixed;
-  text-align:center;
   /* left: 10%*/
 }
 
