@@ -26,15 +26,15 @@ function displayProducts() {
 // Llame a la función displayProducts cuando se carga la página
 window.addEventListener('load', displayProducts);
 
-// El menú
-function toggleMenu() {
-    var x = document.getElementById("navbarMobile");
-    if (x.style.display === "block") {
-      x.style.display = "none";
-    } else {
-      x.style.display = "block";
+
+//FUNCION PARA LINKS DEL MENU PRINCIPAL
+    function updateActiveLink(activeLink) {
+        links.forEach(link => {
+            link.classList.remove('active');
+        });
+        activeLink.classList.add('active');
     }
-  }
+
 
   // FORMULARIO
   document.getElementById('contactForm').addEventListener('submit', function(event) {
