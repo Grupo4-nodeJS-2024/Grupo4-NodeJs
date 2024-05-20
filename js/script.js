@@ -28,6 +28,17 @@ window.addEventListener('load', displayProducts);
 
 
 //FUNCION PARA LINKS DEL MENU PRINCIPAL
+document.addEventListener('DOMContentLoaded', () => {
+    const contentDiv = document.getElementById('content');
+    const links = document.querySelectorAll('.navbar-link');
+
+    const contents = {
+        home: '<h2>Inicio</h2><p>primera página</p>',
+        women: '<h2>Mujeres</h2><p>Ropa para mujeres.</p>',
+        men: '<h2>Hombres</h2><p>Ropa para hombres.</p>',
+        kids: '<h2>Juveniles</h2><p>Ropa para chicos</p>',
+        sustainable: '<h2>Sustentable</h2><p>Ropa sustentable</p>'
+    };
     function updateActiveLink(activeLink) {
         links.forEach(link => {
             link.classList.remove('active');
