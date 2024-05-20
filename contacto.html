@@ -28,12 +28,13 @@
               <button type="submit">Buscar</button>
           </form></div>
             <div class="navbar">
-                <a href="index.html" class="navbarimg"><img src="imgs/logo.png" alt="Grupo4" height="80px" ></a>
-                <a href="women.html">Mujeres</a>
-                <a href="#">Hombres</a>
-                <a href="#">Juvenil</a>
-                <a href="#">Sustentable</a>
-                <a  href="index.html#section1" onclick="scrollToSection(event, 'section1')">Contacto</a>
+              <a href="index.html" class="navbar-link" data-page="home"><img src="imgs/logo.png" alt="Grupo4" height="80px" ></a>
+              <a href="women.html" class="navbar-link" data-page="women">Mujeres</a>
+              <a href="#" class="navbar-link" data-page="men">Hombres</a>
+              <a href="#" class="navbar-link" data-page="kids">Juvenil</a>
+              <a href="#" class="navbar-link" data-sustainable="">Sustentable</a>
+              <a  href="#section1" onclick="scrollToSection(event, 'section1')">Contacto</a>
+              <a href="contacto.html" class="navbar-link" data-page="faq">Preguntas Frecuentes</a>
         </div>
         </div></nav>
 
@@ -42,8 +43,9 @@
         <div class="texto-contacto">
             <h2>Contacto</h2>
         </div>
-        
+       
         <!--Inicio Flor-->
+    <main>
             <div class="contenedor">
                     <div class="cajadepreguntas">
                         <h3 class="preguntas">Preguntas frecuentes</h3>
@@ -144,6 +146,7 @@
               <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
           </footer>
+                </main>
            <!---Zona Script--->
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
