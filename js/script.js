@@ -37,7 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
         women: '<h2>Mujeres</h2><p>Ropa para mujeres.</p>',
         men: '<h2>Hombres</h2><p>Ropa para hombres.</p>',
         kids: '<h2>Juveniles</h2><p>Ropa para chicos</p>',
-        sustainable: '<h2>Sustentable</h2><p>Ropa sustentable</p>'
+        sustainable: '<h2>Sustentable</h2><p>Ropa sustentable</p>',
+        faq: '<h2>FAQ</h2><p>Preguntas Frecuentes</p>'
     };
     function updateActiveLink(activeLink) {
         links.forEach(link => {
