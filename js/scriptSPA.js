@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll('.navbar-link');
 
     const contents = {
-        home: '<h2>Inicio</h2><p>primera página</p>',
+        home: '<h2>Inicio</h2><p>LO MÁS POPULAR...</p>',
         women: '<h2>Mujeres</h2><p>Ropa para mujeres.</p>',
         men: '<h2>Hombres</h2><p>Ropa para hombres.</p>',
         kids: '<h2>Juveniles</h2><p>Ropa para chicos</p>',
