@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 h3 {
   display: block;
   font-size: 1.5em;
@@ -13,6 +14,7 @@ h3 {
   font-weight: bold;
   unicode-bidi: isolate;
 }
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -32,8 +34,6 @@ header {
       text-transform: uppercase;
       color: #FFFFFF;
   }
-
-
 }
 
 .section {
@@ -57,10 +57,10 @@ header {
  
     img {
       max-width: 100%;
-  }
-   h3 {
-    margin-top: 0;
-   } 
+    }
+    h3 {
+      margin-top: 0;
+    } 
   button {
       background-color: #d0021b;
       border: none;
@@ -72,6 +72,7 @@ header {
       background-color: #d0021b;
   }
 }
+
 
 /* ----OPTION BUSCAR FORM1------ */
 
@@ -91,6 +92,7 @@ input[type="text"] {
     border-radius: 4px;
     box-sizing: border-box;
 }
+
 button {
     padding: 10px 20px;
     background-color: #c0c0c0;
@@ -116,6 +118,7 @@ button {
       display: block;
       margin-bottom: 5px;
     }
+
     input,textarea {
       width: 100%;
       padding: 10px;
@@ -131,6 +134,8 @@ button {
 #response {
   margin-top: 20px;
 }
+
+
 /*----- HEADER: Navigation Bar ---- */
 
 .sitewide {
@@ -167,18 +172,17 @@ button {
     i{
     color: #fff;
  
-      i:hover {
+    i:hover {
      color: #d0021b;
       }
     }
   }
     
  
-
-
 .navbar {
     overflow: hidden;
     background-color: #fefefe;
+    
     a {
       float: left;
       display: block;
@@ -191,7 +195,7 @@ button {
       background-color: #ddd;
       color: black;
 
-      a.active {
+     a.active {
         background-color: #D0021B;
         color: white;
       }
@@ -199,21 +203,21 @@ button {
   }
 }
 
+.navbarimg{
+  size: 2%;
+  max-height: 18%;
+  border-radius: 5px;
+}
 
-  .navbarimg{
-    size: 2%;
-    max-height: 18%;
-    border-radius: 5px;
-  }
-
-  .navbar-mobile {
-    display: none;
-  }
-  
+.navbar-mobile {
+  display: none;
+ }
+    
   .icon {
     display: none;
   }
   
+
   @media screen and (max-width: 600px) {
     .navbar a:not(:first-child) {display: none;}
     .navbar a.icon {
@@ -229,16 +233,19 @@ button {
       right: 0;
       top: 0;
     }
+    
     .navbar.responsive a {
       float: none;
       display: block;
       text-align: left;
     }
+
     .navbar-mobile {
       display: block;
     }
   }
 
+  
     /*----- Footer ----*/
   footer {
     background-color: #B9B6B6;
