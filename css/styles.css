@@ -194,13 +194,12 @@ button {
     a:hover {
       background-color: #ddd;
       color: black;
-
-     a.active {
-        background-color: #D0021B;
-        color: white;
-      }
     }
   }
+}
+a.active {
+    background-color: #D0021B;
+    color: white;
 }
 
 .navbarimg{
