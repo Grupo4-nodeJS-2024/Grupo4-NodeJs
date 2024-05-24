@@ -4,6 +4,10 @@ body {
   padding: 0;
 }
 
+h2{
+  padding-left: 2%;
+}
+
 h3 {
 display: block;
 font-size: 1.5em;
@@ -37,7 +41,7 @@ header {
 }
 
 .section {
-height: 500px;
+height: 600px;
 background-color: #f2f2f2;
 margin: 20px 0;
 }
@@ -103,14 +107,15 @@ margin: 20px 0;
   h3 {
     margin-top: 0;
   } 
-button {
+  button {
     background-color: #d0021b;
     border: none;
     color: whitesmoke;
     padding: 10px 20px;
     cursor: pointer;
-}
-button:hover {
+  
+    }
+  button:hover {
     background-color: #d0021b;
 }
 }
@@ -144,34 +149,50 @@ button {
   cursor: pointer;
 }
 
-/*----- FORMULARIO CONTACTO FORM2 -----*/
+/*----- FORMULARIO DE CONTACTO FORM2 -----*/
 
 .form2 {
-background-color: #f3f3f3;
-padding-top: 4em;
-padding: 30px;
-border-radius: 5px;
+  max-width: auto;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.input-group {
-margin-bottom: 20px;
- 
-label {
+.form-group {
+  margin-bottom: 10px;
+
+  label {
     display: block;
     margin-bottom: 5px;
   }
-
-  input,textarea {
+  input,  
+  textarea {
     width: 100%;
-    padding: 10px;
+    padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
   }
+    select{
+      width: auto;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type="checkbox"] {
+      width: auto;
+  }
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+}
 
   button:hover {
     background-color: red;
   }
-}
 
 #response {
 margin-top: 20px;
@@ -291,15 +312,18 @@ display: none;
 
   /*----- Footer ----*/
 footer {
-  background-color: #B9B6B6;
-  padding: 30px 0;
+  background-color: #000000;
+  padding: 50px 0;
   text-align: center;
+  display:grid;
+  color: lightgrey;
 }
 
 .redes-sociales {
   display: flex;
   justify-content: center;
   
+
   a {
   display: inline-block;
   margin: 0 20px;
