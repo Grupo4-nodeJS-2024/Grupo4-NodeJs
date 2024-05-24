@@ -27,30 +27,54 @@ function displayProducts() {
 window.addEventListener('load', displayProducts);
 
 
-  // FORMULARIO
+  // --------FORMULARIO--------
   document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    var formData = new FormData(this);
-    var jsonData = {};
-    formData.forEach(function(value, key){
-      jsonData[key] = value;
-    });
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 200) {
-          document.getElementById('response').innerText = 'MENSAJE ENVIADO EXITOSAMENTE!';
-          document.getElementById('contactForm').reset();
-        } else {
-          document.getElementById('response').innerText = 'HA OCURRIDO UN ERROR. POR FAVOR, VUELVA A INTENTAR.';
-        }
-      }
-    };
-    xhr.open('POST', 'your-server-endpoint-url', true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send(JSON.stringify(jsonData));
-  });
-  
+    let valid = true;
+
+    // Validación del nombre
+    const name = document.getElementById('name').value;
+    if (name.trim() === '') {
+        valid = false;
+        document.getElementById('nameError').innerText = 'El nombre es obligatorio.';
+    } else {
+        document.getElementById('nameError').innerText = '';
+    }
+
+    // Validación del correo electrónico
+    const email = document.getElementById('email').value;
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailPattern.test(email)) {
+        valid = false;
+        document.getElementById('emailError').innerText = 'Ingrese un correo electrónico válido.';
+    } else {
+        document.getElementById('emailError').innerText = '';
+    }
+
+    // Validación del asunto
+    const subject = document.getElementById('subject').value;
+    if (subject === '') {
+        valid = false;
+        document.getElementById('subjectError').innerText = 'Seleccione un asunto.';
+    } else {
+        document.getElementById('subjectError').innerText = '';
+    }
+
+    // Validación del mensaje
+    const message = document.getElementById('message').value;
+    if (message.trim() === '') {
+        valid = false;
+        document.getElementById('messageError').innerText = 'El mensaje es obligatorio.';
+    } else {
+        document.getElementById('messageError').innerText = '';
+    }
+
+    if (valid) {
+        alert('Formulario enviado correctamente.');
+        // Aquí puedes agregar la lógica para enviar el formulario
+        document.getElementById('contactForm').reset();
+    }
+});
 
 
   //Función para linkear dentro de la página
@@ -99,7 +123,7 @@ window.addEventListener('load', displayProducts);
     updateActiveLink(initialLink);
 });
   
-//BANNER//
+//-------BANNER--------//
 
 document.addEventListener("DOMContentLoaded", () => {
   const bannerimgs = document.querySelectorAll('.bannerimg');
