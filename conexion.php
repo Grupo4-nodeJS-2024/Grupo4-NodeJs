@@ -1,8 +1,8 @@
 <?php
 $server = "localhost";
-$username = "root";
-$password = "";//1234
-$dbname = "tienda_bd";
+$username = "id22170183_root";
+$password = "1234CaC.";//1234CaC.
+$dbname = "id22170183_tienda_bd";
 
 // Conexión a la base de datos
 $conn = mysqli_connect($server, $username, $password, $dbname);
