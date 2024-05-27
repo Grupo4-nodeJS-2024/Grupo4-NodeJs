@@ -104,6 +104,8 @@ margin: 20px 0;
 
   img {
     max-width: 100%;
+    margin: 0;
+    height: 60%;
     }
   h3 {
     margin-top: 0;
