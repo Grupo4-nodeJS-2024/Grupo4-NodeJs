@@ -104,7 +104,9 @@ margin: 20px 0;
 
   img {
     max-width: 100%;
-  }
+    margin: 0;
+    height: 60%;
+    }
   h3 {
     margin-top: 0;
   } 
@@ -125,9 +127,7 @@ margin: 20px 0;
 /* ----OPTION BUSCAR FORM1------ */
 
 .form1 {
-  display: inline-block;
-  text-align: end;
-  text-align: right;
+  display: block;
 }
 .container .form1{
 text-align: right;
