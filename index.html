@@ -11,7 +11,7 @@
   </head>
 <body>
     <header class="container">
-        <nav><div>
+        <nav>
            <div class="sitewide">
             <div class="siteicon">
               <a href="#"><i class="fa fa-user fa-lg" aria-hidden="true" "></i></a>
@@ -33,8 +33,20 @@
               <a  href="#section1" onclick="scrollToSection(event, 'section1')">Contacto</a>
               <a href="faq.html">Preguntas Frecuentes</a>
          </div>
-        </div></nav>
-        <div>
+         <nav id="menu">
+              <button class="nav-mobile" id="nav-mobile">
+                <span></span><br>
+                <span></span><br>
+                <span></span><br>
+              </button>
+              <ul class="nav-menu">
+                <li><a href="women.html">Mujeres</a></li>
+                <li><a href="#">Hombres</a></li>
+                <li><a href="#">Juvenil</a></li>
+                <li><a href="#">Sustentable</a></li>
+                <li><a href="#">Preguntas Frecuentes</a></li>
+              </ul>
+          </nav></nav>
     </header>
         <!-----BANNER BÁSICO------->
         <div class="container">
@@ -57,7 +69,6 @@
                     <h5>Lo que es tendencia</h5>
                     <p>Outfit para cada buen gusto...</p>
                   </div>
-                
                <button class="next">></button>
               </div></div></div>
       </div>
@@ -101,13 +112,12 @@
                     <label for="subscribe">Suscribirse a nuestro boletín</label>
                     <button type="submit">Enviar</button>
                     <div class="error" id="subscribeError"></div>
-                </div>
+                  </div>
             </form>
        </div> </div>
  
         <!---PIE DE PAGINA--->
-      
-        <footer>
+         <footer>
             <div class="redes-sociales">
               <a href="#"><i class="fab fa-facebook-f"></i></a>
               <a href="#"><i class="fab fa-twitter"></i></a>
@@ -117,10 +127,8 @@
           </footer> 
         </main>
  
-
     <!---Zona Script--->
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
 </html>

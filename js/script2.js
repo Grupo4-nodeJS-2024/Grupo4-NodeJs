@@ -1,3 +1,9 @@
+function toggleMenu() {
+    var navbar = document.querySelector('.navbar');
+    menu.classList.toggle('open');
+}
+
+//SECCIÓN DE PRODUCTOS EN LA PÁGINA
 const products = [
     { name: 'Product1_w', description:'Outfit Otoño-Invierno', precio: 39.99, image: '#' },
     { name: 'Product2_w', description:'Saco y Suéter cuello alto', precio: 29.99, image: '#' },
@@ -140,4 +146,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initialize banner
     updateBanner(currentIndex);
+});
+
+//MENU MOBILE
+const buttonMenu = document.querySelector('#nav-mobile');
+const navMenu = document.querySelector('.nav-menu');
+
+buttonMenu.addEventListener('click', (e) => {
+  e.currentTarget.classList.toggle('nav-open');
+  navMenu.classList.toggle('open-menu');
+});
+
+$(function() {
+    var btn_movil = $('#nav-mobile'),
+    menu = $('#menu').find('ul');
+
+    btn_movil.on('click', function (e) {
+        e.preventDefault();
+        var el = $(this);
+        el.toggleClass('nav-active');
+        menu.toggleClass('open-menu');
+    });
 });

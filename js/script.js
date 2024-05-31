@@ -1,3 +1,4 @@
+//SECCIÓN DE PRODUCTOS EN LA PÁGINA
 const products = [
     { name: 'Product 1', description:'Campera Cuero Masculina', precio: 19.99, image: '#' },
     { name: 'Product 2', description:'Saco y Suéter cuello alto', precio: 29.99, image: '#' },
@@ -105,4 +106,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize banner
   updateBanner(currentIndex);
+});
+
+//MENU MOBILE
+const buttonMenu = document.querySelector('#nav-mobile');
+const navMenu = document.querySelector('.nav-menu');
+
+buttonMenu.addEventListener('click', (e) => {
+  e.currentTarget.classList.toggle('nav-open');
+  navMenu.classList.toggle('open-menu');
+});
+
+$(function() {
+    var btn_movil = $('#nav-mobile'),
+    menu = $('#menu').find('ul');
+
+    btn_movil.on('click', function (e) {
+        e.preventDefault();
+        var el = $(this);
+        el.toggleClass('nav-active');
+        menu.toggleClass('open-menu');
+    });
 });
