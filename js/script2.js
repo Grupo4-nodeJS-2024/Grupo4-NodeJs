@@ -3,15 +3,25 @@ function toggleMenu() {
     menu.classList.toggle('open');
 }
 
+function fetchAndDisplayProducts() {
+    fetch("https://ospostog4js.alwaysdata.net/rutas")
+        .then(response => response.json())
+        .then(data => {
+            displayProducts(data);
+        })
+        .catch(error => console.log(error));
+}
+/*
 //SECCIÓN DE PRODUCTOS EN LA PÁGINA
 const products = [
     { name: 'Product1_w', description:'Outfit Otoño-Invierno', precio: 39.99, image: '#' },
     { name: 'Product2_w', description:'Saco y Suéter cuello alto', precio: 29.99, image: '#' },
     { name: 'Product3_w', description:'Supera el frío con excelente campera', precio: 39.99, image: '#' }
 ];
+*/
 
 // Función para mostrar productos en la página.
-function displayProducts() {
+function displayProducts(products) {
     const productsContainer = document.querySelector('.products');
 
     products.forEach(product => {
@@ -19,8 +29,8 @@ function displayProducts() {
         productCard.classList.add('product');
 
         productCard.innerHTML = `
-            <img src="imgs/${product.name}.jpg" alt="${product.name}">
-            <p>${product.description}</p>
+            <img src="www/assets/images/${product.imagen}" alt="${product.nombreProducto}">
+            <p>${product.descripcion}</p>
             <p>$${product.precio}</p>
             <button>Add to Cart</button>
         `;
@@ -30,9 +40,7 @@ function displayProducts() {
 }
 
 // Llame a la función displayProducts cuando se carga la página
-window.addEventListener('load', displayProducts);
-
-
+window.addEventListener('load', fetchAndDisplayProducts);
 
   //CARGA DE PRODUCTOS
   
