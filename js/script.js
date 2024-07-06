@@ -1,9 +1,9 @@
 //SECCIÓN DE PRODUCTOS EN LA PÁGINA
-const products = [
+/*const products = [
     { name: 'Product 1', description:'Campera Cuero Masculina', precio: 19.99, image: '#' },
     { name: 'Product 2', description:'Saco y Suéter cuello alto', precio: 29.99, image: '#' },
     { name: 'Product 3', description:'Buzos para ell@s', precio: 39.99, image: '#' }
-];
+];*/
 
 // Función para mostrar productos en la página.
 function displayProducts() {
